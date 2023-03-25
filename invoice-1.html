@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Responsive Bootstrap 4 Admin &amp; Dashboard Template">
+    <meta name="author" content="Bdtask">
+    <title>invoice</title>
+    <!-- App favicon -->
+   
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Reem+Kufi+Ink&display=swap" rel="stylesheet">
+
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        * {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+        
+        .header-bg {
+            background-image: url(./assets/dist/img/invoice-image/header-png.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 70px;
+        }
+        
+        .footer-bg {
+            background-image: url(./assets/dist/img/invoice-image/footer.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 70px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            position: absolute;
+            width: 100%;
+            align-items: center;
+            display: flex;
+            justify-content: space-evenly;
+            color: #fff;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .address {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 20px;
+        }
+        
+        .address i {
+            margin-right: 6px;
+        }
+        
+        .logo img {
+            width: 180px;
+        }
+        
+        p {
+            font-size: 12px;
+            margin-top: 2px;
+            margin-bottom: 2px;
+            font-family: 'Montserrat';
+            font-weight: 600;
+        }
+        
+        table th {
+            font-size: 13px;
+            font-weight: 600;
+            padding: 4px;
+        }
+        
+        table td {
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px;
+        }
+        
+        .top-table tr {
+            background-color: #e0e0e0;
+        }
+        
+        .top-table thead th {
+            background-color: #1c2838;
+            padding: 7px;
+            font-size: 25px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+        
+        .main-table {
+            padding: 0px 25px;
+        }
+        
+        .main-table tr:nth-child(odd) {
+            background-color: #e0e0e0!important;
+        }
+        
+        .main-table tr:nth-child(even) {
+            background-color: #f4f4f4!important;
+        }
+        
+        .main-table thead th {
+            background-color: #6f7377;
+            color: #fff;
+        }
+        
+        .footer-table {
+            padding: 0px 25px;
+            width: 60%;
+            float: right;
+        }
+        
+        .footer-table tr th:nth-child(odd) {
+            background-color: #6f7377!important;
+            color: #fff;
+        }
+        
+        .footer-table tr td:nth-child(even) {
+            background-color: #f4f4f4!important;
+        }
+        
+        .payment-info-table tr th:nth-child(odd) {
+            background-color: #6f7377!important;
+            color: #fff;
+        }
+        
+        .payment-info-table {
+            width: 100%;
+        }
+        
+        .payment-info-table tr td:nth-child(even) {
+            background-color: #f4f4f4!important;
+        }
+        
+        ol {
+            margin: 0px;
+            padding-left: 20px;
+        }
+        
+        ol li {
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        table {
+            border-spacing: 5px;
+            width: 100%;
+            border-collapse: initial;
+        }
+        
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        
+        @media print {
+            html,
+            body {
+                width: 210mm;
+                height: 297mm;
+            }
+            .page {
+                margin: 0;
+                border: initial;
+                border-radius: initial;
+                width: initial;
+                min-height: initial;
+                box-shadow: initial;
+                background: initial;
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+
+<body class="fixed sidebar-mini">
+    
+    <div class="wrapper">
+        
+        <!-- Page Content  -->
+        <div class="content-wrapper">
+            <div class="main-content">
+                
+
+                <div class="body-content">
+                    <div class="container">
+                        <div class="mb-3 row justify-content-center">
+                            <button class="btn btn-primary w-auto" type="submit" onclick="myFunction()">Print</button>
+                        </div>
+                        
+                        <div id="print-table" style="width: 198mm; margin:10px auto 10px; background-color:#fff;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);-moz-box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24); -webkit-print-color-adjust: exact;">
+                            <div style="height: 100%;">
+                                <div style="position: relative; height: 100%; padding-bottom: 58px;">
+                                    <div class="header-bg">
+                                        <div class="header-content">
+                                            <div class="logo">
+                                                <img src="./assets/dist/img/invoice-image/Bdtask-Logo-Update.png" alt="">
+                                            </div>
+                                            <div class="address">
+                                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                                <p style="font-size: 10px;">B-25, Mannan Plaza, 4th Floor Khilkhet,<br> Dhaka-1229, Bangladesh</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- start name and iformation section -->
+                                    <div style="display: flex; justify-content: space-between; margin-top: 18px; padding: 10px 25px; align-items: center;">
+                                        <div>
+                                            <h2 style="font-size: 26px; margin: 0px; color: #1c2838;">Md. Nabid</h2>
+                                            <h6 style="font-size: 15px; font-weight: 500; margin: 0px; padding-bottom: 25px;">Project Manager</h6>
+                                            <div style="display: flex; align-items: center;">
+                                                <img style="width: 18px; height: 18px; margin-right: 5px;" src="./assets/dist/img/invoice-image/phone.png" alt="">
+                                                <p>+880-258-970-255</p>
+                                            </div>
+                                            <div style="display: flex; align-items: center;">
+                                                <img style="width: 18px; height: 18px; margin-right: 5px;" src="./assets/dist/img/invoice-image/message.png" alt="">
+                                                <p>business@bdtask.com</p>
+                                            </div>
+                                            <div style="display: flex; align-items: center;">
+                                                <img style="width: 18px; height: 18px; margin-right: 5px;" src="./assets/dist/img/invoice-image/global-green.png" alt="">
+                                                <p>Dhaka-1229, Bangladesh</p>
+                                            </div>
+                                            <div style="display: flex; align-items: center;">
+                                                <img style="width: 18px; height: 18px; margin-right: 5px;" src="./assets/dist/img/invoice-image/location.png" alt="">
+                                                <p>Dhaka-1229, Bangladesh</p>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <img style="width: 200px;" src="./assets/dist/img/invoice-image/Bar-code.png" alt="">
+                                            <table class="top-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th colspan="2">Invoice</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Invoice No</td>
+                                                        <td>9494</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Date</td>
+                                                        <td>12-4-2023</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Due Date</td>
+                                                        <td>12-4-2023</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- end name and iformation section -->
+                                    <!-- start product table -->
+                                    <table class="main-table">
+                                        <thead>
+                                            <tr>
+                                                <th>SL</th>
+                                                <th>Product Name</th>
+                                                <th>Unit</th>
+                                                <th>Quantity</th>
+                                                <th>Dis. Value</th>
+                                                <th>VAT. Value</th>
+                                                <th>Product Price</th>
+                                                <th>Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Ram-4gb</td>
+                                                <td>kg</td>
+                                                <td>1</td>
+                                                <td>0</td>
+                                                <td>0</td>
+                                                <td>250</td>
+                                                <td>250</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Ram-4gb</td>
+                                                <td>kg</td>
+                                                <td>1</td>
+                                                <td>0</td>
+                                                <td>0</td>
+                                                <td>250</td>
+                                                <td>250</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Ram-4gb</td>
+                                                <td>kg</td>
+                                                <td>1</td>
+                                                <td>0</td>
+                                                <td>0</td>
+                                                <td>250</td>
+                                                <td>250</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Ram-4gb</td>
+                                                <td>kg</td>
+                                                <td>1</td>
+                                                <td>0</td>
+                                                <td>0</td>
+                                                <td>250</td>
+                                                <td>250</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: center;" colspan="7">Total</td>
+                                                <td>2500</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- end product table -->
+
+                                    <!-- start grand total table -->
+                                    <table class="footer-table">
+                                        <tr>
+                                            <th>Discount on Prd:</th>
+                                            <td>1300.00</td>
+                                            <th>Grand Total</th>
+                                            <td>1300.00</td>
+                                        </tr>
+                                        <tr>
+                                            <th>VAT Value</th>
+                                            <td>1300.00</td>
+                                            <th>Paid Amount</th>
+                                            <td>1300.00</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Discount on Sale:</th>
+                                            <td>0.00</td>
+                                            <th>Due Amount</th>
+                                            <td>0.00</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Shipping Cost</th>
+                                            <td>1300.00</td>
+                                            <th>Net Total</th>
+                                            <td>1300.00</td>
+                                        </tr>
+                                    </table>
+                                    <!-- end grand total table -->
+                                    <!-- start payment info block -->
+                                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 5px 25px;">
+                                        <div>
+                                            <h3 style="margin: 0px; padding: 5px; color: #4dbd5b; font-size: 18px;">Payment Info</h3>
+                                            <table class="payment-info-table">
+                                                <tr>
+                                                    <th>Cash</th>
+                                                    <td>131221</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Islami Bank</th>
+                                                    <td>131221</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Bkash</th>
+                                                    <td>131221</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <img style="height: 80px;" src="./assets/dist/img/invoice-image/QR-Code.png" alt="">
+                                    </div>
+                                    <!-- end payment info block -->
+                                    <!-- start terms & condition and signature block -->
+                                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 15px 25px; margin-bottom: 5px;">
+                                        <div>
+                                            <p><b>Remarks:</b> Extra change will be calculated for urgent PO.</p>
+                                            <h4 style="margin: 0px;">Thank you for doing business with us</h4>
+                                            <h3 style="margin: 0px; padding: 5px; color: #4dbd5b; font-size: 18px;">Term & Condition</h3>
+                                            <ol>
+                                                <li>Lorem ipsum dolor sit amet.</li>
+                                                <li>Lorem ipsum dolor sit amet.</li>
+                                                <li>Lorem ipsum dolor sit amet.</li>
+                                                <li>Lorem ipsum dolor sit amet.</li>
+                                                <li>Lorem ipsum dolor sit amet.</li>
+                                            </ol>
+                                        </div>
+                                        <div style="text-align: center;">
+                                            <img style="height: 50px; width: 100px; margin-bottom: 5px;" src="./assets/dist/img/invoice-image/signature-2.jpg" alt="">
+                                            <h4 style="margin: 0px; padding: 0px 30px; border-top: 1px solid #1c2838;">Name & Signature</h4>
+                                            <p style="font-size: 10px; font-weight: 500;">Ssles Admin</p>
+                                        </div>
+                                    </div>
+                                    <!-- end terms & condition and signature block -->
+                                    <div class="footer-bg">
+                                        <div style="display: flex; justify-content: space-around; width: 100%;">
+                                            <div style="display: flex; align-items: center;">
+                                                <img style="width: 18px; height: 18px; margin-right: 5px;" src="./assets/dist/img/invoice-image/message.png" alt="">
+                                                <p>business@bdtask.com</p>
+                                            </div>
+                                            <div style="display: flex; align-items: center;">
+                                                <img style="width: 18px; height: 18px; margin-right: 5px;" src="./assets/dist/img/invoice-image/globla-black.png" alt="">
+                                                <p>www.bdtask.com</p>
+                                            </div>
+                                            <div style="display: flex; align-items: center;">
+                                                <i style="margin-right: 5px;" class="fa fa-phone" aria-hidden="true"></i>
+                                                <!-- <img style="width: 18px; height: 18px; margin-right: 5px;" src="./image/phone.png" alt=""> -->
+                                                <p>+880-258-970-255</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!--/.body content-->
+            </div>
+           
+        </div>
+        <!--/.wrapper-->
+    </div>
+   
+    <script>
+        function myFunction() {
+            var printContents = document.getElementById('print-table').innerHTML;
+            var originalContents = document.body.innerHTML;
+            document.body.innerHTML = printContents;
+            window.print();
+        }
+
+        $(function() {
+            $("#print-table").ejReportViewer({
+                reportServiceUrl: "/api/ReportApi",
+                processingMode: ej.ReportViewer.ProcessingMode.Remote,
+                reportPath: "~/Report/GroupingAgg.rdl",
+                reportPrint: "onPrintReport"
+            });
+        });
+
+        function onPrintReport(args) {
+            var data = $("#print-table").data('ejReportViewer');
+            if (data.browserInfo.name != "msie") {
+                args.printWind.printDelay = 2000;
+            }
+            args.isStyleLoad = false;
+        }
+    </script>
+</body>
+
+</html>
